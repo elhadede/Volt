@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://world.tres" type="TileSet" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://check2.gd" type="Script" id=4]
+[ext_resource path="res://PNG/light.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 26.7592 )
+
+[node name="world" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 1310712, 0, 0, 1310713, 0, 0, 1310714, 0, 0, 1310715, 0, 0, 1310716, 0, 0, 1310717, 0, 0, 1310718, 0, 0, 1310719, 0, 0, 1245184, 0, 0, 1245185, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245188, 0, 0, 1376248, 0, 0, 1376249, 5, 0, 1376250, 5, 0, 1376251, 5, 0, 1376252, 5, 0, 1376253, 5, 0, 1376254, 5, 0, 1376255, 5, 0, 1310720, 5, 0, 1310721, 5, 0, 1310722, 5, 0, 1310723, 5, 0, 1310724, 0, 0, 1441784, 0, 0, 1441785, 5, 0, 1441786, 5, 0, 1441787, 5, 0, 1441788, 5, 0, 1441789, 5, 0, 1441790, 5, 0, 1441791, 5, 0, 1376256, 5, 0, 1376257, 5, 0, 1376258, 5, 0, 1376259, 5, 0, 1376260, 0, 0, 1507320, 0, 0, 1507321, 0, 0, 1507322, 0, 0, 1507323, 0, 0, 1507324, 0, 0, 1507325, 0, 0, 1507326, 0, 0, 1507327, 0, 0, 1441792, 0, 0, 1441793, 2, 0, 1441795, 0, 0, 1441796, 0, 0, 1572856, 0, 0, 1572857, 2, 0, 1572858, 2, 0, 1572859, 2, 0, 1572860, 2, 0, 1572861, 2, 0, 1572862, 2, 0, 1507328, 2, 0, 1507329, 2, 0, 1507330, 2, 0, 1507332, 0, 0, 1638392, 0, 0, 1638393, 2, 0, 1638395, 2, 0, 1638396, 2, 0, 1638397, 2, 0, 1638399, 2, 0, 1572864, 2, 0, 1572865, 2, 0, 1572866, 2, 0, 1572868, 0, 0, 1703928, 0, 0, 1703929, 2, 0, 1638404, 0, 0, 1769464, 0, 0, 1769465, 2, 0, 1769467, 0, 0, 1769468, 0, 0, 1769469, 0, 0, 1769470, 0, 0, 1769471, 0, 0, 1703936, 0, 0, 1703937, 0, 0, 1703938, 0, 0, 1703939, 0, 0, 1703940, 0, 0, 1835000, 0, 0, 1835001, 2, 0, 1835003, 2, 0, 1835004, 2, 0, 1835005, 2, 0, 1835006, 2, 0, 1769472, 0, 0, 1769473, 2, 0, 1769474, 2, 0, 1769476, 0, 0, 1900536, 0, 0, 1900537, 2, 0, 1900542, 2, 0, 1900543, 2, 0, 1835008, 2, 0, 1835009, 2, 0, 1835010, 2, 0, 1835012, 0, 0, 1966072, 0, 0, 1966073, 2, 0, 1966074, 2, 0, 1966075, 2, 0, 1966076, 2, 0, 1966077, 2, 0, 1966078, 2, 0, 1900545, 2, 0, 1900546, 2, 0, 1900548, 0, 0, 2031608, 0, 0, 1966080, 0, 0, 1966084, 0, 0, 2097144, 0, 0, 2097145, 0, 0, 2097146, 0, 0, 2097147, 0, 0, 2097148, 0, 0, 2097149, 0, 0, 2097150, 0, 0, 2097151, 0, 0, 2031616, 0, 0, 2031617, 0, 0, 2031618, 0, 0, 2031619, 0, 0, 2031620, 0, 0 )
+
+[node name="Light2D2" type="Light2D" parent="."]
+position = Vector2( -50.1278, 781.482 )
+texture = ExtResource( 5 )
+offset = Vector2( 23, 0 )
+color = Color( 1, 0, 0, 1 )
+shadow_enabled = true
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -134.201, 921.828 )
+texture = ExtResource( 5 )
+offset = Vector2( 23, 0 )
+color = Color( 1, 0, 0, 1 )
+shadow_enabled = true
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -186.04, 669.617 )
+
+[node name="enemy3" parent="." instance=ExtResource( 3 )]
+position = Vector2( -175.362, 786.303 )
+
+[node name="enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -90.5096, 933.381 )
+
+[node name="enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 48.0051, 772.754 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 23, 922.426 )
+script = ExtResource( 4 )
+
+[node name="checkpoint" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -10, 4 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]

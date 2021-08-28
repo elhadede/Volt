@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="ParticlesMaterial" id=2]
+render_priority = 5
+next_pass = SubResource( 1 )
+emission_shape = 1
+emission_sphere_radius = 53.8
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 1 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( -4.24268, 654.074 )
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.65
+randomness = 0.42
+draw_order = 1
+process_material = SubResource( 2 )
